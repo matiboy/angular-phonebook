@@ -9,9 +9,13 @@
  */
 angular.module('angularPhonebookApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.entries = [];
+    $scope.addEntry = function() {
+      var newEntry = {
+        name: $scope.name,
+        type: $scope.type,
+        details: $scope.details
+      };
+      $scope.entries.push(newEntry);
+    };
   });

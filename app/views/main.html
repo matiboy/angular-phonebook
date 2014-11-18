@@ -4,11 +4,11 @@
     <div>
       <p>
         <label>Name</label>
-        <input name="name">
+        <input name="name" ng-model="name">
       </p>
       <p>
         <label>Contact type</label>
-        <select name="type">
+        <select name="type" ng-model="type">
           <option value="handphone">Handphone</option>
           <option value="house">House phone</option>
           <option value="email">Email</option>
@@ -16,12 +16,19 @@
       </p>
       <p>
         <label>Contact details</label>
-        <input name="value">
+        <input name="value" ng-model="details">
       </p>
-      <a class="btn btn-lg btn-success">Add!<span class="glyphicon glyphicon-ok"></span></a>
+      <a class="btn btn-lg btn-success" ng-click="addEntry()">Add!<span class="glyphicon glyphicon-ok"></span></a>
     </div>
   </div>
   <div class="col-xs-6">
     <h3>Phonebook entries</h3>
+    <ul>
+      <li ng-repeat="entry in entries">
+        <h4>{{entry.name}}</h4>
+        <h5>{{entry.type}}</h5>
+        <p>{{entry.details}}</p>
+      </li>
+    </ul>
   </div>
 </div>
